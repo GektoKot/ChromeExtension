@@ -23,9 +23,13 @@ function render() {
     let listItem = ""
 
     for (let item of items) {
-        listItem += `<li>
-                        <a href="${item}" target='_blank'> ${item} </a>
-                    </li>`
+        listItem += `
+                    <li>
+                        <a href="${item}" target='_blank'> 
+                            ${item} 
+                        </a>
+                    </li>
+        `
     }
 
     ulEl.innerHTML = listItem
