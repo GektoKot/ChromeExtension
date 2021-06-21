@@ -11,7 +11,7 @@ render()
 
 
 
-saveBtn.addEventListener("click", function (){
+saveBtn.addEventListener("click", function () {
     if (text.value === undefined || text.value === "") {
         return
     }
@@ -22,10 +22,12 @@ saveBtn.addEventListener("click", function (){
 function render() {
     let listItem = ""
 
-    for(let item of items) {
-        listItem += "<li>" + item + "</li>"
+    for (let item of items) {
+        listItem += `<li>
+                        <a href="${item}" target='_blank'> ${item} </a>
+                    </li>`
     }
-    
+
     ulEl.innerHTML = listItem
 }
 
