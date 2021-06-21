@@ -6,28 +6,33 @@ const ulEl = document.getElementById("ul-el")
 
 // let items = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 
-let items = JSON.parse(localStorage.getItem("items"))
+
+let items
 
 render()
 
 
 
+
 saveBtn.addEventListener("click", function () {
-    if (text.value === undefined || text.value === "") {
+    if (!text.value) {
         return
     }
 
     items.push(text.value)
     localStorage.setItem("items", JSON.stringify(items))
-
     render()
 })
 
 
 function render() {
-    let listItem = ""
     items = JSON.parse(localStorage.getItem("items"))
+    if (!items) {
+        items = []
+        return
+    }
     
+    let listItem = ""
     for (let item of items) {
         listItem += `
                     <li>
