@@ -24,9 +24,17 @@ button {
     color: white;
     background-color: darkslateblue;
 }
+li button {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    color: white;
+    background-color: darkslateblue;
+}
 
 ul {
-    list-style: square;
+    padding: 0;
+    list-style: none;
 }
 
 li {
