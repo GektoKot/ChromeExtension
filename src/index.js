@@ -1,6 +1,7 @@
 
 
 const saveBtn = document.getElementById("save-btn")
+const saveTabBtn = document.getElementById("save-tab-btn")
 const dltBtn = document.getElementById("delete-btn")
 const text = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
@@ -8,6 +9,8 @@ const ulEl = document.getElementById("ul-el")
 // let items = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
 let items = []
 let itemsFromStorage = JSON.parse(localStorage.getItem("items"))
+let tabs = [{url: "fghf"}]
+let tabsFromStorage = JSON.parse(localStorage.getItem("tabs"))
 
 if(itemsFromStorage) {
     items = itemsFromStorage
@@ -36,6 +39,12 @@ function render(arr) {
     }
     ulEl.innerHTML = listItem
 }
+
+saveTabBtn.addEventListener("click", function () {
+    items.push(tabs[0].url)
+    localStorage.setItem("items", JSON.stringify(items))
+    render(items)
+})
 
 dltBtn.addEventListener("click", function () {
     localStorage.clear()
