@@ -21,9 +21,6 @@ function render(arr) {
     for (let item of arr) {
         listItem += `
                     <li>
-                        <button class="rmv-Btn" onclick="remove()">
-                             X 
-                        </button>
                         
                         <a href="${item}" target='_blank'> 
                             ${item} 
@@ -31,12 +28,10 @@ function render(arr) {
                         
                     </li>
         `
-        // <button class="rmv-Btn" onclick="lock()">
-        // 🔒
-        // </button>
     }
     ulEl.innerHTML = listItem
 }
+
 
 saveTabBtn.addEventListener("click", function () {
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, tabs => {
@@ -68,9 +63,7 @@ saveBtn.addEventListener("click", function () {
 
 
 
-function remove() {
 
-}
 
 
 // for(let item of items) {
